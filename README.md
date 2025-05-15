@@ -104,11 +104,19 @@ Use these Stripe test cards to simulate various scenarios:
 
 ## Security Implementation
 
-- Stripe Elements handles sensitive card data
-- Server-side amount validation prevents tampering
-- Secure payment confirmation flow
-- Comprehensive error handling
-- No sensitive data persistence
+- **Stripe Elements for Data Security**: Uses Stripe's secure iframe-based Elements to handle sensitive card data, ensuring PCI compliance. [Stripe Elements Security](https://docs.stripe.com/security#stripe-elements)
+
+- **Server-side Amount Validation**: Implements amount validation on the server to prevent price manipulation attempts. [Payment Intent Amount Validation](https://docs.stripe.com/api/payment_intents/object#payment_intent_object-amount)
+
+- **Secure Payment Flow**: Follows Stripe's recommended payment flow with client-server confirmation steps. [Payment Flow Security](https://docs.stripe.com/security#payment-security)
+
+- **Error Handling and Logging**: Implements comprehensive error handling following Stripe's best practices. [Error Handling Guide](https://docs.stripe.com/error-handling)
+
+- **Zero Data Persistence**: No sensitive payment data is stored on servers, following Stripe's security requirements. [Data Security Guidelines](https://docs.stripe.com/security#data-security)
+
+- **HTTPS and TLS**: Enforces secure connections for all API calls to Stripe. [Transport Security](https://docs.stripe.com/security#transport-security)
+
+- **Webhook Signatures**: Validates webhook events using Stripe signatures to prevent unauthorized requests. [Webhook Security](https://docs.stripe.com/webhooks/signatures)
 
 ## Integrated Stripe APIs
 
