@@ -71,3 +71,8 @@ Test cards:
 - Handlebars (hbs)
 - Bootstrap 4.6
 - Stripe Elements
+
+## Documentation used in creation
+
+- https://docs.stripe.com/payments/quickstart?lang=node#init-elements-html
+- Finsessing of code curtosy of Anthropic Claud Sonnet 3.5
