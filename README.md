@@ -79,37 +79,24 @@ flowchart TB
     G --> G1[Validate Completion]
     G1 --> G2[Display Receipt]
 
-    subgraph "1. Item Selection"
-        direction TB
-        B1
-        B2
-        B3
-        B4
+    subgraph Selection[1. Item Selection]
+        B1 & B2 & B3 & B4
     end
 
-    subgraph "2. Payment Intent Creation"
-        direction TB
-        C
-        D
+    subgraph Intent[2. Payment Intent Creation]
+        C & D
     end
 
-    subgraph "3. Payment Information Collection"
-        direction TB
-        E
-        E1
-        E2
+    subgraph Collection[3. Payment Information Collection]
+        E & E1 & E2
     end
 
-    subgraph "4. Transaction Processing"
-        direction TB
+    subgraph Processing[4. Transaction Processing]
         F
     end
 
-    subgraph "5. Transaction Verification"
-        direction TB
-        G
-        G1
-        G2
+    subgraph Verification[5. Transaction Verification]
+        G & G1 & G2
     end
 ```
 
