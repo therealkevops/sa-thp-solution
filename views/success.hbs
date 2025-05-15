@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="mt-40 text-center text-success">
+    <h1>
+      <i class="far fa-check-circle"></i> 
+      Payment Successful!
+    </h1>
+  </div>
+
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Payment Details</h5>
+          
+          {{#if error}}
+            <div class="alert alert-danger">
+              {{error}}
+            </div>
+          {{else}}
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <th scope="row">Amount Paid</th>
+                  <td>${{amount}} {{currency}}</td>
+                </tr>
+                <tr>
+                  <th scope="row">Payment ID</th>
+                  <td><code>{{payment_intent}}</code></td>
+                </tr>
+                <tr>
+                  <th scope="row">Status</th>
+                  <td><span class="badge badge-success">{{payment_status}}</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Payment Method</th>
+                  <td>{{payment_method}}</td>
+                </tr>
+                {{#if metadata.title}}
+                <tr>
+                  <th scope="row">Item Purchased</th>
+                  <td>{{metadata.title}}</td>
+                </tr>
+                {{/if}}
+              </tbody>
+            </table>
+          {{/if}}
+
+          <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary">Return to Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

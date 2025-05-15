@@ -1,0 +1,41 @@
+<div class="row justify-content-md-center">
+  <div class="col-6">
+    <div class="text-center mt-40">
+      <h1>
+        Checkout — Stripe Press
+      </h1>
+      <h5 class="text-secondary">
+        {{title}}
+      </h5>
+      <hr class="mt-40">
+      <div class="mt-20 text-info">
+        Total due: ${{amount}}
+      </div>
+    </div>
+    <div class="card box-shadow mt-40">
+      <div class="card-body">
+        <form id="payment-form">
+          <div class="mb-4">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="you@email.com">
+          </div>
+
+          <div id="payment-element" class="mb-4">
+            <!-- Stripe.js will insert the Payment Element here -->
+          </div>
+
+          <div id="payment-message" class="alert alert-danger mb-4 hidden"></div>
+
+          <button id="submit" class="btn btn-lg btn-block btn-primary">
+            <div class="spinner hidden" id="spinner"></div>
+            <span id="button-text">Pay ${{amount}}</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Stripe.js -->
+<script src="https://js.stripe.com/v3/"></script>
+<script src="/js/checkout.js"></script>
