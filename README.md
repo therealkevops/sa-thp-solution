@@ -78,26 +78,7 @@ flowchart TB
     F -->|Failure| E
     G --> G1[Validate Completion]
     G1 --> G2[Display Receipt]
-
-    subgraph Selection[1. Item Selection]
-        B1 & B2 & B3 & B4
-    end
-
-    subgraph Intent[2. Payment Intent Creation]
-        C & D
-    end
-
-    subgraph Collection[3. Payment Information Collection]
-        E & E1 & E2
-    end
-
-    subgraph Processing[4. Transaction Processing]
-        F
-    end
-
-    subgraph Verification[5. Transaction Verification]
-        G & G1 & G2
-    end
+    G2 --> H([End])
 ```
 
 ## Development Testing
