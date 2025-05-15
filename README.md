@@ -1,6 +1,6 @@
 # Stripe Press Book Store
 
-A modern e-commerce application demonstrating Stripe payment integration with Node.js. This implementation showcases secure payment processing, real-time validation, and a seamless checkout experience.
+A modern e-commerce application demonstrating Stripe payment integration with a basic digital book store, built with Node.js. This implementation showcases secure payment processing, real-time validation, and a seamless checkout experience.
 
 ## Core Features
 
