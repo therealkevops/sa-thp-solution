@@ -70,20 +70,6 @@ Use these Stripe test cards to simulate various scenarios:
 | 4000 0025 0000 3155 | 3D Secure authentication |
 | 4000 0000 0000 9995 | Payment declined |
 
-## Project Architecture
-
-```
-sa-thp-solution/
-├── app.js              # Application core & API routes
-├── views/              # Handlebars templates
-│   ├── layouts/        # Base templates
-│   ├── checkout.hbs    # Payment interface
-│   └── success.hbs     # Confirmation page
-├── public/             # Static assets
-│   ├── js/            # Client-side scripts
-│   └── css/           # Stylesheets
-└── .env               # Environment configuration
-```
 
 ## Security Implementation
 
