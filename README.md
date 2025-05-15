@@ -63,32 +63,46 @@ The application will be available at `http://localhost:3000`
 ### Payment Flow Diagram
 
 ```mermaid
-flowchart TB
-    A[Customer] --> B[Item Selection]
-    B --> C[Server Creates PaymentIntent]
+flowchart TD
+    A[Customer] -->|Starts| B[Item Selection]
+    
+    subgraph "Item Selection"
+        B --> B1[Catalog Display]
+        B1 --> B2[Product Details]
+        B2 --> B3[Price Calculation]
+    end
+    
+    B3 --> C[Server Creates PaymentIntent]
     C --> D[Client Receives Payment Token]
     D --> E[Stripe Elements Collection]
-    E --> F{Payment Processing}
+    
+    subgraph "Payment Collection"
+        E --> E1[Real-time Validation]
+        E1 --> E2[Card Formatting]
+    end
+    
+    E2 --> F{Payment Processing}
     F -->|Success| G[Transaction Verification]
-    G --> H[Display Receipt]
     F -->|Failure| I[Error Handling]
     I --> E
     
-    subgraph "Item Selection"
-    B --> B1[Catalog Display]
-    B1 --> B2[Product Details]
-    B2 --> B3[Price Calculation]
-    end
-    
-    subgraph "Payment Collection"
-    E --> E1[Real-time Validation]
-    E1 --> E2[Card Formatting]
-    end
-    
     subgraph "Server Verification"
-    G --> G1[Validate Payment Status]
-    G1 --> G2[Confirm Amount]
+        G --> G1[Validate Payment Status]
+        G1 --> G2[Confirm Amount]
     end
+    
+    G2 --> H[Display Receipt]
+
+    %% Positioning hints
+    B1 -..-> B2
+    E1 -..-> E2
+    G1 -..-> G2
+    
+    %% Styling
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style F fill:#ff9,stroke:#333,stroke-width:2px
+    style H fill:#9f9,stroke:#333,stroke-width:2px
+    style I fill:#f99,stroke:#333,stroke-width:2px
 ```
 
 ## Development Testing
