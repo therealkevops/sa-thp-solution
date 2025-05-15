@@ -90,7 +90,7 @@ Use these Stripe test cards to simulate various credit card payment scenarios at
 | 4000 0025 0000 3155 | 3D Secure authentication |
 | 4000 0000 0000 9995 | Payment declined |
 
-Note, experiation date must be a valid future date however the CVC number can be randomised.
+Note, experiation date must be a valid future date, however the CVC number can be randomised.
 
 ## Security Implementation
 
