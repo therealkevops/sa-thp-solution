@@ -63,52 +63,48 @@ The application will be available at `http://localhost:3000`
 ### Payment Flow Diagram
 
 ```mermaid
-flowchart LR
+flowchart TB
     A([Start]) --> B1[View Catalog]
     B1 --> B2[Select Book]
     B2 --> B3[Capture Details]
     B3 --> B4[Calculate Price]
-
-    subgraph "1. Item Selection"
-        B1
-        B2
-        B3
-        B4
-    end
-
     B4 --> C[Create PaymentIntent]
     C --> D[Send Payment Token]
-
-    subgraph "2. Payment Intent Creation"
-        C
-        D
-    end
-
     D --> E[Collect Payment Details]
     E --> E1[Card Validation]
     E1 --> E2[Real-time Formatting]
-
-    subgraph "3. Payment Information Collection"
-        E
-        E1
-        E2
-    end
-
     E2 --> F{Process Payment}
     F -->|Success| G[Verify Payment]
     F -->|Failure| E
-
-    subgraph "4. Transaction Processing"
-        F
-    end
-
     G --> G1[Validate Completion]
     G1 --> G2[Display Receipt]
 
+    subgraph "1. Item Selection"
+    B1
+    B2
+    B3
+    B4
+    end
+
+    subgraph "2. Payment Intent Creation"
+    C
+    D
+    end
+
+    subgraph "3. Payment Information Collection"
+    E
+    E1
+    E2
+    end
+
+    subgraph "4. Transaction Processing"
+    F
+    end
+
     subgraph "5. Transaction Verification"
-        G
-        G1
-        G2
+    G
+    G1
+    G2
     end
 ```
 
