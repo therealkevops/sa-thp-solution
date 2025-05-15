@@ -63,45 +63,31 @@ The application will be available at `http://localhost:3000`
 ### Payment Flow Diagram
 
 ```mermaid
-flowchart LR
-    %% Main flow nodes
-    Start([Customer]) --> Cat[Browse Catalog]
-    Cat --> Select[Select Item]
-    Select --> Price[Calculate Price]
-    Price --> Intent[Create PaymentIntent]
-    Intent --> Token[Generate Client Token]
-    Token --> Payment[Payment Form]
-    Payment --> Validate{Validate Input}
-    Validate -->|Valid| Process{Process Payment}
-    Validate -->|Invalid| Payment
-    Process -->|Success| Verify[Verify Transaction]
-    Process -->|Failure| Payment
-    Verify --> Receipt[Display Receipt]
-
-    %% Styling
-    style Start fill:#f9f,stroke:#333,stroke-width:2px
-    style Process fill:#ff9,stroke:#333,stroke-width:2px
-    style Receipt fill:#9f9,stroke:#333,stroke-width:2px
-    style Validate fill:#ff9,stroke:#333,stroke-width:2px
-
-    %% Subgraph for client-side operations
-    subgraph "Client Side"
-        Cat
-        Select
-        Payment
+flowchart TB
+    A[Customer] --> B[Item Selection]
+    B --> C[Server Creates PaymentIntent]
+    C --> D[Client Receives Payment Token]
+    D --> E[Stripe Elements Collection]
+    E --> F{Payment Processing}
+    F -->|Success| G[Transaction Verification]
+    G --> H[Display Receipt]
+    F -->|Failure| I[Error Handling]
+    I --> E
+    
+    subgraph "Item Selection"
+    B --> B1[Catalog Display]
+    B1 --> B2[Product Details]
+    B2 --> B3[Price Calculation]
     end
-
-    %% Subgraph for server-side operations
-    subgraph "Server Side"
-        Price
-        Intent
-        Verify
+    
+    subgraph "Payment Collection"
+    E --> E1[Real-time Validation]
+    E1 --> E2[Card Formatting]
     end
-
-    %% Subgraph for Stripe operations
-    subgraph "Stripe"
-        Token
-        Process
+    
+    subgraph "Server Verification"
+    G --> G1[Validate Payment Status]
+    G1 --> G2[Confirm Amount]
     end
 ```
 
