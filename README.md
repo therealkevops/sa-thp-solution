@@ -82,7 +82,7 @@ flowchart TB
 
 ## Development Testing
 
-Use these Stripe test cards to simulate various scenarios:
+Use these Stripe test cards to simulate various scenarios at the customer checkout:
 
 | Card Number | Scenario |
 |------------|----------|
@@ -141,12 +141,13 @@ Use these Stripe test cards to simulate various scenarios:
 
 ## References
 
-- [Stripe Payments Documentation](https://docs.stripe.com/payments/quickstart?lang=node#init-elements-html)
+- [Stripe Payments Quickstart Documentation](https://docs.stripe.com/payments/quickstart?lang=node#init-elements-html)
 - [Stripe.js Reference](https://docs.stripe.com/js)
+- Additional debugging and code creation using Cursor + Claude-3.5-sonnet
 
 ## Implementation Approach
 
-This solution prioritizes:
+This solution prioritizes a number of key aspects of Stripe payments integration, which at a high level includes:
 - Minimal modification of existing architecture
 - Direct integration with Stripe's recommended practices
 - Clean separation of concerns
