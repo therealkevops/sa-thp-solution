@@ -97,11 +97,7 @@ flowchart TB
     E1 -..-> E2
     G1 -..-> G2
     
-    %% Styling
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style F fill:#ff9,stroke:#333,stroke-width:2px
-    style H fill:#9f9,stroke:#333,stroke-width:2px
-    style I fill:#f99,stroke:#333,stroke-width:2px
+
 ```
 
 ## Development Testing
