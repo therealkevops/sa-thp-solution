@@ -63,41 +63,31 @@ The application will be available at `http://localhost:3000`
 ### Payment Flow Diagram
 
 ```mermaid
-flowchart TB
-    A[Customer] --> B[Item Selection]
-    B --> C[Server Creates PaymentIntent]
-    C --> D[Client Receives Payment Token]
-    D --> E[Stripe Elements Collection]
-    E --> F{Payment Processing}
-    F -->|Success| G[Transaction Verification]
-    G --> H[Display Receipt]
-    F -->|Failure| I[Error Handling]
-    I --> E
-    
-    subgraph "Item Selection"
-    B --> B1[Catalog Display]
-    B1 --> B2[Product Details]
-    B2 --> B3[Price Calculation]
-    end
-    
-    subgraph "Payment Collection"
-    E --> E1[Real-time Validation]
-    E1 --> E2[Card Formatting]
-    end
-    
-    subgraph "Server Verification"
-    G --> G1[Validate Payment Status]
-    G1 --> G2[Confirm Amount]
-    end
-    
-    G2 --> H[Display Receipt]
+flowchart LR
+    A([Start]) --> B[Select Item]
+    B --> C[Create PaymentIntent]
+    C --> D[Generate Token]
+    D --> E[Collect Payment]
+    E --> F{Process}
+    F -->|Success| G[Verify]
+    F -->|Failure| E
+    G --> H([Complete])
 
-    %% Positioning hints
-    B1 -..-> B2
-    E1 -..-> E2
-    G1 -..-> G2
-    
+    subgraph "Selection"
+        B --> B1[View Catalog]
+        B1 --> B2[Choose Book]
+        B2 --> B3[Set Price]
+    end
 
+    subgraph "Payment"
+        E --> E1[Validate]
+        E1 --> E2[Format]
+    end
+
+    subgraph "Verification"
+        G --> G1[Check Status]
+        G1 --> G2[Confirm]
+    end
 ```
 
 ## Development Testing
