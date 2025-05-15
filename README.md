@@ -64,47 +64,45 @@ The application will be available at `http://localhost:3000`
 
 ```mermaid
 flowchart LR
-    A([Start]) --> B[Item Selection]
-    
-    subgraph Selection["Item Selection Process"]
-        B --> B1[View Catalog]
-        B1 --> B2[Select Product]
-        B2 --> B3[Calculate Price]
+    %% Main flow nodes
+    Start([Customer]) --> Cat[Browse Catalog]
+    Cat --> Select[Select Item]
+    Select --> Price[Calculate Price]
+    Price --> Intent[Create PaymentIntent]
+    Intent --> Token[Generate Client Token]
+    Token --> Payment[Payment Form]
+    Payment --> Validate{Validate Input}
+    Validate -->|Valid| Process{Process Payment}
+    Validate -->|Invalid| Payment
+    Process -->|Success| Verify[Verify Transaction]
+    Process -->|Failure| Payment
+    Verify --> Receipt[Display Receipt]
+
+    %% Styling
+    style Start fill:#f9f,stroke:#333,stroke-width:2px
+    style Process fill:#ff9,stroke:#333,stroke-width:2px
+    style Receipt fill:#9f9,stroke:#333,stroke-width:2px
+    style Validate fill:#ff9,stroke:#333,stroke-width:2px
+
+    %% Subgraph for client-side operations
+    subgraph "Client Side"
+        Cat
+        Select
+        Payment
     end
-    
-    subgraph Payment["Payment Processing"]
-        C[Create PaymentIntent]
-        D[Generate Token]
-        E[Collect Payment Info]
-        F{Process Payment}
+
+    %% Subgraph for server-side operations
+    subgraph "Server Side"
+        Price
+        Intent
+        Verify
     end
-    
-    subgraph Validation["Payment Validation"]
-        E1[Card Validation]
-        E2[Format Check]
+
+    %% Subgraph for Stripe operations
+    subgraph "Stripe"
+        Token
+        Process
     end
-    
-    subgraph Verification["Transaction Verification"]
-        G1[Verify Status]
-        G2[Confirm Amount]
-        H[Display Receipt]
-    end
-    
-    Selection --> C
-    C --> D
-    D --> E
-    E --> Validation
-    Validation --> F
-    F -->|Success| G1
-    G1 --> G2
-    G2 --> H
-    F -->|Failure| I[Error Handler]
-    I --> E
-    
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style F fill:#ff9,stroke:#333,stroke-width:2px
-    style H fill:#9f9,stroke:#333,stroke-width:2px
-    style I fill:#f99,stroke:#333,stroke-width:2px
 ```
 
 ## Development Testing
