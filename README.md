@@ -121,19 +121,23 @@ Use these Stripe test cards to simulate various scenarios:
 ## Integrated Stripe APIs
 
 ### Payment Elements
-- Secure payment information collection
-- Dynamic form validation
-- Customizable UI components
+- **Secure Payment Collection**: Implements [Payment Element UI Components](https://docs.stripe.com/elements/payment-element)
+- **Dynamic Form Validation**: Real-time input validation using [Elements Validation](https://docs.stripe.com/elements/input-validation)
+- **Customizable UI**: Styling and branding options via [Elements Appearance API](https://docs.stripe.com/elements/appearance-api)
+- **Payment Method Support**: Automatic handling of [diverse payment methods](https://docs.stripe.com/elements/payment-element#payment-methods)
 
 ### PaymentIntents API
-- `create`: Initializes payment processing
-- `retrieve`: Validates payment status
-- Handles authentication requirements
+- **Create**: Initialize payment processing with [PaymentIntent Creation](https://docs.stripe.com/api/payment_intents/create)
+- **Retrieve**: Validate payment status using [PaymentIntent Retrieval](https://docs.stripe.com/api/payment_intents/retrieve)
+- **Confirm**: Handle payment confirmation with [PaymentIntent Confirmation](https://docs.stripe.com/api/payment_intents/confirm)
+- **Authentication Flow**: Support for [Strong Customer Authentication (SCA)](https://docs.stripe.com/strong-customer-authentication)
 
 ### Client Integration
-- Stripe.js for secure token handling
-- Payment confirmation management
-- 3D Secure authentication support
+- **Stripe.js**: Core client-side integration via [Stripe.js Reference](https://docs.stripe.com/js)
+- **Payment Flow**: Complete [Payment Flow Implementation](https://docs.stripe.com/payments/accept-a-payment)
+- **3D Secure**: Support for [3D Secure Authentication](https://docs.stripe.com/payments/3d-secure)
+- **Error Handling**: Client-side [Error Management](https://docs.stripe.com/error-handling)
+- **Events**: Real-time [Payment Event Handling](https://docs.stripe.com/webhooks/payment-events)
 
 ## Technical Stack
 
