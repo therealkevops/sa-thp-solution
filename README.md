@@ -67,12 +67,11 @@ flowchart TB
     A([Start]) --> B1[View Catalog]
     B1 --> B2[Select Book]
     B2 --> B3[Capture Details]
-    B3 --> B4[Calculate Price]
-    B4 --> C[Create PaymentIntent]
+    B3 --> C[Create PaymentIntent]
     C --> D[Send Payment Token]
     D --> E[Collect Payment Details]
     E --> E1[Card Validation]
-    E1 --> E2[Real-time Formatting]
+    E1 --> E2[Real-time Feedback]
     E2 --> F{Process Payment}
     F -->|Success| G[Verify Payment]
     F -->|Failure| E
