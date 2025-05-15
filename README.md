@@ -82,7 +82,7 @@ flowchart TB
 
 ## Development Testing
 
-Use these Stripe test cards to simulate various scenarios at the customer checkout:
+Use these Stripe test cards to simulate various credit card payment scenarios at the customer checkout:
 
 | Card Number | Scenario |
 |------------|----------|
