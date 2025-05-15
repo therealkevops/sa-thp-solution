@@ -1,103 +1,73 @@
-# Stripe Press Book Store
+# 📚 Stripe Press Book Store
 
-A Node.js e-commerce application that allows customers to purchase books using Stripe's payment processing. This application demonstrates the integration of Stripe Elements for secure payment collection and processing.
+Simple Node.js e-commerce app showcasing Stripe payment integration.
 
-## Features
+## ✨ Features
 
-- Modern, responsive UI using Bootstrap 4.6
-- Secure payment processing with Stripe Elements
-- Real-time payment validation and error handling
-- Detailed success page with payment confirmation
-- Centralized item management
-- Amount formatting and currency handling
+- 🎨 Modern UI with Bootstrap 4.6
+- 💳 Stripe Elements integration
+- 🔒 Secure payment processing
+- 📱 Responsive design
+- 💰 Real-time payment validation
 
-## Application Overview
+## 🚀 Quick Start
 
-This application is built with:
-- Node.js and Express for the backend
-- Handlebars (hbs) for templating
-- Bootstrap 4.6 for styling
-- Stripe Elements for payment processing
-
-### Key Components
-
-1. **Item Management**
-   - Items are stored in a centralized object in `app.js`
-   - Each item has a title and amount (in cents)
-   - Easy to add or modify items without changing multiple files
-
-2. **Checkout Flow**
-   - Clean, user-friendly checkout form
-   - Email collection
-   - Stripe Payment Element integration
-   - Real-time payment validation
-   - Loading states and error handling
-
-3. **Payment Processing**
-   - Secure payment intent creation
-   - Client-side payment confirmation
-   - Server-side payment verification
-   - Detailed success page with transaction details
-
-4. **Success Page**
-   - Displays payment amount and currency
-   - Shows Stripe payment ID
-   - Indicates payment status
-   - Lists payment method used
-   - Shows purchased item details
-   - Option to return to home page
-
-## Getting Started
-
-1. Clone the repository:
+1. Clone and install:
 ```bash
-git clone https://github.com/yourusername/sa-takehome-project-node
-cd sa-takehome-project-node
-```
-
-2. Install dependencies:
-```bash
+git clone https://github.com/yourusername/stripe-press
+cd stripe-press
 npm install
 ```
 
-3. Set up your environment:
-   - Rename `sample.env` to `.env`
-   - Add your Stripe API keys:
-     ```
-     STRIPE_PUBLISHABLE_KEY=pk_test_your_key
-     STRIPE_SECRET_KEY=sk_test_your_key
-     ```
+2. Set up environment:
+```bash
+cp sample.env .env
+# Add your Stripe keys to .env:
+# STRIPE_PUBLISHABLE_KEY=pk_test_...
+# STRIPE_SECRET_KEY=sk_test_...
+```
 
-4. Start the application:
+3. Run it:
 ```bash
 npm start
 ```
 
-5. Visit [http://localhost:3000](http://localhost:3000) to view the application.
+Visit `http://localhost:3000` 🎉
 
-## Project Structure
+## 💫 Payment Flow
 
-- `app.js` - Main application file with routes and item definitions
-- `views/` - Handlebars templates
-  - `layouts/main.hbs` - Main layout template
-  - `checkout.hbs` - Checkout page with Stripe Elements
-  - `success.hbs` - Payment confirmation page
-  - `index.hbs` - Home page with book listings
-- `public/` - Static assets
-  - `js/checkout.js` - Stripe Elements initialization and payment handling
-  - `css/custom.css` - Custom styles
+1. 🛍️ **Select** - Choose a book
+2. 🔐 **Setup** - Create payment intent
+3. 💳 **Pay** - Enter card details
+4. ✅ **Confirm** - Process payment
+5. 🧾 **Verify** - View receipt
 
-## Testing
+## 🧪 Testing
 
-Use these test card numbers to simulate different scenarios:
-- Success: 4242 4242 4242 4242
-- Requires Authentication: 4000 0025 0000 3155
-- Declined: 4000 0000 0000 9995
+Test cards:
+- ✅ Success: `4242 4242 4242 4242`
+- 🔒 3D Secure: `4000 0025 0000 3155`
+- ❌ Decline: `4000 0000 0000 9995`
 
-## Security Features
+## 📁 Structure
 
-- Stripe Elements for secure card collection
-- Server-side payment verification
-- Amount validation
-- Error handling for failed payments
-- No sensitive data stored on server
+```
+├── app.js         # Main server file
+├── views/         # Handlebars templates
+├── public/        # Static assets
+└── .env          # Environment config
+```
+
+## 🔒 Security
+
+- No card data touches our server
+- Server-side amount validation
+- Secure Elements integration
+- Error handling for all cases
+
+## 🛠️ Tech Stack
+
+- Node.js + Express
+- Handlebars (hbs)
+- Bootstrap 4.6
+- Stripe Elements
