@@ -80,31 +80,36 @@ flowchart TB
     G1 --> G2[Display Receipt]
 
     subgraph "1. Item Selection"
-    B1
-    B2
-    B3
-    B4
+        direction TB
+        B1
+        B2
+        B3
+        B4
     end
 
     subgraph "2. Payment Intent Creation"
-    C
-    D
+        direction TB
+        C
+        D
     end
 
     subgraph "3. Payment Information Collection"
-    E
-    E1
-    E2
+        direction TB
+        E
+        E1
+        E2
     end
 
     subgraph "4. Transaction Processing"
-    F
+        direction TB
+        F
     end
 
     subgraph "5. Transaction Verification"
-    G
-    G1
-    G2
+        direction TB
+        G
+        G1
+        G2
     end
 ```
 
