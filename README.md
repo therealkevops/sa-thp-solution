@@ -64,7 +64,8 @@ The application will be available at `http://localhost:3000`
 
 ```mermaid
 flowchart LR
-    A([Start]) --> B[Select Item]
+    A([Start]) --> B1[View Catalog]
+    B1 --> B[Select Item]
     B --> C[Create PaymentIntent]
     C --> D[Generate Token]
     D --> E[Collect Payment]
@@ -74,9 +75,8 @@ flowchart LR
     G --> H([Complete])
 
     subgraph "Selection"
-        B --> B1[View Catalog]
-        B1 --> B2[Choose Book]
-        B2 --> B3[Set Price]
+        B1
+        B
     end
 
     subgraph "Payment"
