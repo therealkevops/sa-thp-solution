@@ -1,6 +1,6 @@
 # Stripe Press Book Store
 
-A modern e-commerce application designed to test and demonstrate the ease of Stripe payment integration with Node.js. This implementation showcases secure payment processing, real-time validation, and a seamless checkout experience.
+This basic e-commerce application is designed to test and demonstrate the ease of Stripe payment integration with Node.js. This implementation showcases secure payment processing, real-time validation, and a seamless checkout experience.
 
 ## Core Features
 
@@ -22,7 +22,7 @@ npm install dotenv stripe
 
 2. Configure environment variables:
 ```bash
-cp sample.env .env
+touch .env
 ```
 
 Add your Stripe API credentials to `.env`:
@@ -149,6 +149,7 @@ Note, experiation date must be a valid future date, however the CVC number can b
 ## Implementation Approach
 
 This solution prioritizes a number of key aspects of Stripe payments integration, which at a high level includes:
+
 - Minimal modification of existing architecture
 - Direct integration with Stripe's recommended practices
 - Clean separation of concerns
