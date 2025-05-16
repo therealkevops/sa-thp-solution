@@ -2,7 +2,19 @@
 
 This basic e-commerce application is designed to test and demonstrate the ease of Stripe payment integration with Node.js. This implementation showcases secure payment processing, real-time validation, and a seamless checkout experience.
 
+## Implementation Approach
+
+This solution prioritizes a number of key aspects of Stripe payments integration, which at a high level includes:
+
+- Minimal modification of existing architecture
+- Direct integration with Stripe's recommended practices
+- Clean separation of concerns
+- Robust error handling
+- Secure payment processing
+
 ## Core Features
+
+Stripe's ecosystem of tools and services is expansive, however this demo application focuses on the following core features:
 
 - **Modern Payment Processing**: Integration of Stripe Elements for secure payment collection
 - **Real-time Validation**: Immediate feedback on payment information
@@ -90,7 +102,7 @@ Use these Stripe test cards to simulate various credit card payment scenarios at
 | 4000 0025 0000 3155 | 3D Secure authentication |
 | 4000 0000 0000 9995 | Payment declined |
 
-Note, experiation date must be a valid future date, however the CVC number can be randomised.
+Note, expiration date must be a valid future date, however the CVC number can be randomized.
 
 ## Security Implementation
 
@@ -145,16 +157,6 @@ Note, experiation date must be a valid future date, however the CVC number can b
 - [Stripe Payments Quickstart Documentation](https://docs.stripe.com/payments/quickstart?lang=node#init-elements-html)
 - [Stripe.js Reference](https://docs.stripe.com/js)
 - Additional debugging and code creation using Cursor + Claude-3.5-sonnet
-
-## Implementation Approach
-
-This solution prioritizes a number of key aspects of Stripe payments integration, which at a high level includes:
-
-- Minimal modification of existing architecture
-- Direct integration with Stripe's recommended practices
-- Clean separation of concerns
-- Robust error handling
-- Secure payment processing
  
 ## Future Enhancements
 
@@ -185,8 +187,6 @@ This solution prioritizes a number of key aspects of Stripe payments integration
 
 ## Final Thoughts
 
-My experience in developing this solution was one of pure satisfaction. The Stripe documentation is easy to follow and accessable to most modern code-assist tooling to enable rapid code generation and easy debugging. I'm looking forward to expanding the project in the future!
+My experience in developing this solution was one of pure satisfaction. The Stripe documentation is easy to follow and accessible to most modern code-assist tooling to enable rapid code generation and easy debugging. I'm looking forward to expanding the project in the future!
 
 Happy testing!
-
-
